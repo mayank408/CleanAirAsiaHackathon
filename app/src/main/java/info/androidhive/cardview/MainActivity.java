@@ -1,22 +1,27 @@
 package info.androidhive.cardview;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.Rect;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.support.design.widget.FloatingActionButton;
+
 
 import com.bumptech.glide.Glide;
 
@@ -32,24 +37,81 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Making notification bar transparent
-        if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        }
-
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        changeStatusBarColor();
+        initCollapsingToolbar();
 
+       // ImageView share = (ImageView) findViewById(R.id.overflow);
+
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+
+        albumList = new ArrayList<>();
+        adapter = new AlbumsAdapter(this, albumList);
+
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(adapter);
+
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        if(fab!=null)
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final EditText editTitle = (EditText) findViewById(R.id.name);
+                final EditText deayPlace = (EditText) findViewById(R.id.places);
+                final EditText editDes = (EditText) findViewById(R.id.descriptions);
+                final EditText editThumbnail = (EditText) findViewById(R.id.images);
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+                alert.setView(R.layout.item_add);
+                alert.setTitle("Add to News Feed");
+                alert.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        if(editTitle!=null&&deayPlace!=null&&editDes!=null&&editThumbnail!=null) {
+                            String name = editTitle.getText().toString();
+                            String place = deayPlace.getText().toString();
+                            String des = editDes.getText().toString();
+                            String image = editThumbnail.getText().toString();
+
+
+                            Album a = new Album(name, place, des, R.drawable.mitchell);
+                            albumList.add(a);
+                        }
+                    }
+                }).create().show();
+            }
+
+        });
+
+
+        prepareAlbums();
+
+        try {
+            Glide.with(this).load(R.drawable.h).into((ImageView) findViewById(R.id.backdrop));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Initializing collapsing toolbar
+     * Will show and hide the toolbar title on scroll
+     */
+    private void initCollapsingToolbar() {
         final CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         collapsingToolbar.setTitle(" ");
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
         appBarLayout.setExpanded(true);
 
+        // hiding & showing the title when toolbar expanded & collapsed
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             boolean isShow = false;
             int scrollRange = -1;
@@ -68,52 +130,50 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-
-        albumList = new ArrayList<>();
-        adapter = new AlbumsAdapter(albumList);
-
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(adapter);
-
-        prepareAlbums();
-
-        try {
-            Glide.with(this).load(R.drawable.cover1).into((ImageView) findViewById(R.id.backdrop));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
+    /**
+     * Adding few albums for testing
+     */
     private void prepareAlbums() {
         int[] covers = new int[]{
-                R.drawable.album1,
-                R.drawable.album2,
-                R.drawable.album3,
-                R.drawable.album4,
-                R.drawable.album5,
-                R.drawable.album6,
-                R.drawable.album7,
+                R.drawable.a,
+                R.drawable.b,
+                R.drawable.c,
+                R.drawable.d,
+                R.drawable.e,
+                R.drawable.f,
+                R.drawable.g,
                 R.drawable.album8,
                 R.drawable.album9,
                 R.drawable.album10,
                 R.drawable.album11};
 
-        for (int i = 0; i < covers.length; i++) {
-            Album a = new Album();
-            a.setName("Album: " + i);
-            a.setThumbnail(covers[i]);
+        Album a = new Album("Mohit ","Rohini", "No to burning ", covers[6]);
+        albumList.add(a);
 
-            albumList.add(a);
-        }
+        a = new Album("Afreen","RK puram", "Ban on Crackers", covers[3]);
+        albumList.add(a);
+
+        a = new Album("Maroon ","Cannaught Place", "Updation on data of AQI", covers[2]);
+        albumList.add(a);
+
+        a = new Album("Rohit","Bawana", "New Industry formed", covers[5]);
+        albumList.add(a);
+
+        a = new Album("Himanshu","Ashram" ,"Constrution Work", covers[4]);
+        albumList.add(a);
+
+        a = new Album("Ashu", "Dwarka","Meetup for checking air pollution", covers[0]);
+        albumList.add(a);
+
 
         adapter.notifyDataSetChanged();
     }
 
+    /**
+     * RecyclerView item decoration - give equal margin around grid item
+     */
     public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
         private int spanCount;
@@ -149,19 +209,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Converting dp to pixel
+     */
     private int dpToPx(int dp) {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
-    }
-
-    /**
-     * Making notification bar transparent
-     */
-    private void changeStatusBarColor() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(Color.TRANSPARENT);
-        }
     }
 }

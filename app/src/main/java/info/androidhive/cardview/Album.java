@@ -5,14 +5,18 @@ package info.androidhive.cardview;
  */
 public class Album {
     private String name;
+    private String des;
+    private String place;
     private int numOfSongs;
     private int thumbnail;
 
     public Album() {
     }
 
-    public Album(String name, int numOfSongs, int thumbnail) {
+    public Album(String name, String des , String place, int thumbnail) {
         this.name = name;
+        this.des = des;
+        this.place = place;
         this.numOfSongs = numOfSongs;
         this.thumbnail = thumbnail;
     }
@@ -39,5 +43,21 @@ public class Album {
 
     public void setThumbnail(int thumbnail) {
         this.thumbnail = thumbnail;
+    }
+
+    public String getDes() {
+        return des;
+    }
+
+    public void setDes(String des) {
+        this.des = des;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
     }
 }

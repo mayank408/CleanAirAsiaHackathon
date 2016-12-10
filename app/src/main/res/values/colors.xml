@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="colorPrimary">#F50057</color>
-    <color name="colorPrimaryDark">#F50057</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="viewBg">#f1f5f8</color>
-</resources>
+    <resources>
+        <color name="colorPrimary">#8BC34A</color>
+        <color name="colorPrimaryDark">#689F38</color>
+        <color name="primary_light">#fafaf9</color>
+        <color name="colorAccent">#4CAF50</color>
+        <color name="primary_text">#212121</color>
+        <color name="secondary_text">#757575</color>
+        <color name="icons">#212121</color>
+        <color name="divider">#BDBDBD</color>
+        <color name="viewBg">#f1f5f8</color>
+        <color name="album_title">#4c4c4c</color>
+
+    </resources>
+

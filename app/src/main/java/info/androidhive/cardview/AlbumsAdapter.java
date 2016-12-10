@@ -1,34 +1,62 @@
 package info.androidhive.cardview;
 
+import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
 /**
- * Created by Lincoln on 18/05/16.
+ * Created by Ravi Tamada on 18/05/16.
  */
 public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHolder> {
 
+    private Context mContext;
     private List<Album> albumList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title;
-        public ImageView thumbnail;
+        public TextView title, count , place;
+        public ImageView thumbnail, overflow;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
+            count = (TextView) view.findViewById(R.id.count);
             thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+            place = (TextView) view.findViewById(R.id.place);
+            overflow = (ImageView) view.findViewById(R.id.overflow);
+
+
+            if(overflow!=null)
+                overflow.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent sendMailIntent = new Intent(Intent.ACTION_SEND);
+                        sendMailIntent.putExtra(Intent.EXTRA_SUBJECT, "News Feed");
+                        sendMailIntent.setType("text/plain");
+                        mContext.startActivity(Intent.createChooser(sendMailIntent, "Share Using"));
+                        Log.e("Car Pool: ", "Clicked CP");
+                    }
+                });
+
         }
     }
 
 
-    public AlbumsAdapter(List<Album> albumList) {
+    public AlbumsAdapter(Context mContext, List<Album> albumList) {
+        this.mContext = mContext;
         this.albumList = albumList;
     }
 
@@ -41,10 +69,53 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(final MyViewHolder holder, int position) {
         Album album = albumList.get(position);
         holder.title.setText(album.getName());
-        holder.thumbnail.setImageResource(album.getThumbnail());
+        holder.count.setText(album.getDes());
+        holder.place.setText(album.getPlace());
+
+
+        // loading album cover using Glide library
+        Glide.with(mContext).load(album.getThumbnail()).into(holder.thumbnail);
+
+    }
+
+
+
+    /**
+     * Showing popup menu when tapping on 3 dots
+     */
+    private void showPopupMenu(View view) {
+        // inflate menu
+        PopupMenu popup = new PopupMenu(mContext, view);
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.menu_album, popup.getMenu());
+        popup.setOnMenuItemClickListener(new MyMenuItemClickListener());
+        popup.show();
+    }
+
+    /**
+     * Click listener for popup menu items
+     */
+    class MyMenuItemClickListener implements PopupMenu.OnMenuItemClickListener {
+
+        public MyMenuItemClickListener() {
+        }
+
+        @Override
+        public boolean onMenuItemClick(MenuItem menuItem) {
+            switch (menuItem.getItemId()) {
+                case R.id.action_add_favourite:
+                    Toast.makeText(mContext, "Add to favourite", Toast.LENGTH_SHORT).show();
+                    return true;
+                case R.id.action_play_next:
+                    Toast.makeText(mContext, "Play next", Toast.LENGTH_SHORT).show();
+                    return true;
+                default:
+            }
+            return false;
+        }
     }
 
     @Override

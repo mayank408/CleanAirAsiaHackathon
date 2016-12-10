@@ -48,16 +48,16 @@
                         android:id="@+id/love_music"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="LOVE MUSIC"
+                        android:text="News Feed"
                         android:textColor="@android:color/white"
-                        android:textSize="30dp" />
+                        android:textSize="@dimen/backdrop_title" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="This season top 20 albums"
+                        android:text="Lets have a look "
                         android:textColor="@android:color/white"
-                        android:textSize="18dp" />
+                        android:textSize="@dimen/backdrop_subtitle" />
 
                 </LinearLayout>
             </RelativeLayout>
@@ -69,10 +69,29 @@
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
+
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/content_main"
+        android:id="@+id/include" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_input_add"
+        android:layout_marginTop="84dp"
+        android:layout_below="@+id/recycler_view"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="29dp"
+        android:layout_marginEnd="29dp"
+        app:layout_anchor="@+id/appbar"
+        android:background="@color/colorAccent"
+        android:tint="@android:color/white"
+        app:layout_anchorGravity="bottom|right"
+        android:layout_gravity="center_vertical|left" />
 
 </android.support.design.widget.CoordinatorLayout>
