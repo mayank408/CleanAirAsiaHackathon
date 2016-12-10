@@ -58,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+
+
         if(fab!=null)
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,15 +77,17 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
+
+
                         if(editTitle!=null&&deayPlace!=null&&editDes!=null&&editThumbnail!=null) {
                             String name = editTitle.getText().toString();
                             String place = deayPlace.getText().toString();
                             String des = editDes.getText().toString();
-                            String image = editThumbnail.getText().toString();
 
 
                             Album a = new Album(name, place, des, R.drawable.mitchell);
                             albumList.add(a);
+                            adapter.notifyDataSetChanged();
                         }
                     }
                 }).create().show();
@@ -144,10 +149,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.e,
                 R.drawable.f,
                 R.drawable.g,
-                R.drawable.album8,
-                R.drawable.album9,
-                R.drawable.album10,
-                R.drawable.album11};
+             };
 
         Album a = new Album("Mohit ","Rohini", "No to burning ", covers[6]);
         albumList.add(a);
