@@ -25,9 +25,7 @@ public class Gif extends AppCompatActivity {
             webview.getSettings().setJavaScriptEnabled(true);
             webview.loadUrl("http://909sickle.net/s/pollution/pollution.gif");
         }
-
         Button news = (Button) findViewById(R.id.news);
-
 if(news!=null)
         news.setOnClickListener(new View.OnClickListener() {
             @Override
