@@ -2,22 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="info.androidhive.cardview" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Clean Air"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        >
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAe0DqbPTCqozvzr5HRHOEZngLuRk_gRhw" />
         <activity
             android:name=".Gif"
             android:label="News Feed">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
@@ -29,7 +33,19 @@
                 />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".advisory" />
+=======
+        <activity
+            android:name=".MapsActivity"
+            android:label="MAP"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+>>>>>>> 6fb36679c79d3ba560af9ac214f079eae7d292b8
     </application>
 
 </manifest>
