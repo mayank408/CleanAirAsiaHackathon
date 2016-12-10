@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
                 final EditText deayPlace = (EditText) findViewById(R.id.places);
                 final EditText editDes = (EditText) findViewById(R.id.descriptions);
                 final EditText editThumbnail = (EditText) findViewById(R.id.images);
-
                 AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
                 alert.setView(R.layout.item_add);
                 alert.setTitle("Add to News Feed");
