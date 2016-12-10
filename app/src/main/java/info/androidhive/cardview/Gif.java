@@ -27,6 +27,7 @@ public class Gif extends AppCompatActivity {
         }
 
         Button news = (Button) findViewById(R.id.news);
+        Button adv = (Button) findViewById(R.id.adv);
 
 if(news!=null)
         news.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +38,13 @@ if(news!=null)
             }
         });
 
+        adv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Gif.this, advisory.class);
+                startActivity(i);
+            }
+        });
 
     }
 }
