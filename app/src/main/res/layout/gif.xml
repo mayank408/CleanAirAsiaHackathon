@@ -41,7 +41,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
 
@@ -65,35 +65,43 @@
             android:layout_width="wrap_content"
             android:textSize = "20dp"
             android:textColor="@android:color/white"
-            android:padding="8dp"
-
+            android:paddingRight="48dp"
+            android:paddingLeft="48dp"
             android:layout_height="wrap_content"
-            android:text="Did U Know"/>
-
-        <Button
-            android:id="@+id/carpool"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="40dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize = "20dp"
-            android:padding="8dp"
-            android:textColor="@android:color/white"
-            android:text="News Feed"/>
+            android:text="FAQ"/>
 
 
-        <Button
-            android:id="@+id/advisory"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="48dp"
-            android:layout_width="wrap_content"
-            android:textSize = "20dp"
-            android:textColor="@android:color/white"
-
-            android:layout_height="wrap_content"
-            android:text="Did U Know"/>
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+    <Button
+        android:id="@+id/carpool"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize = "20dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:textColor="@android:color/white"
+        android:text="CAR POOL"/>
 
 
+    <Button
+        android:id="@+id/advisory"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="48dp"
+        android:layout_width="wrap_content"
+        android:textSize = "20dp"
+        android:textColor="@android:color/white"
+        android:paddingRight="19dp"
+        android:paddingLeft="19dp"
+        android:layout_height="wrap_content"
+        android:text="Advisory"/>
+
+</LinearLayout>
 </LinearLayout>
