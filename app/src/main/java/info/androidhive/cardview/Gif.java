@@ -1,13 +1,17 @@
 package info.androidhive.cardview;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ImageView;
 
 
 /**
@@ -21,11 +25,6 @@ public class Gif extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gif);
 
-        WebView webview = (WebView)findViewById(R.id.webview);
-        if(webview!=null) {
-            webview.getSettings().setJavaScriptEnabled(true);
-            webview.loadUrl("http://909sickle.net/s/pollution/pollution.gif");
-        }
         Button news = (Button) findViewById(R.id.news);
         Button adv = (Button) findViewById(R.id.adv);
 

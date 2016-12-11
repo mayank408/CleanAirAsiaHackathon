@@ -172,6 +172,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         val = (ppmSort[0]*distanceSort[0] + ppmSort[1]*distanceSort[1] + ppmSort[2]*distanceSort[2])/(distanceSort[0] + distanceSort[1] + distanceSort[2]);
         sortPlaces = places;
         ppmSort = ppm;
+        val-=50;
 
         Log.e("PPM", Integer.toString(val));
         TextView aqi_text = (TextView) findViewById(R.id.aqi);
