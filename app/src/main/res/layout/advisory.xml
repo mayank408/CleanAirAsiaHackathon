@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flavienlaurent.discrollview.lib.DiscrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:discrollve="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.flavienlaurent.discrollview.lib.DiscrollViewContent
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#689F38"
+            android:textColor="@android:color/white"
+
+            android:padding="25dp"
+            android:textSize="72sp"
+            android:gravity="center"
+            android:fontFamily="serif"
+            android:text="Did You Know?" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#d43b23"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_threshold="0.3" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#8BC34A"
+            android:padding="16dp"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromLeft|fromBottom"
+            android:src="@drawable/mitchell" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="#A9A9A9"
+
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:fontFamily="helvetica"
+            android:gravity="center"
+            android:text=" Indoor air pollution is 2-5 times worse than the air outdoors."
+            android:textSize="18sp"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromBottom" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#8BC34A"
+            android:padding="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/j"
+            discrollve:discrollve_translation="fromLeft|fromBottom"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:fontFamily="helvetica"
+            android:background="#A9A9A9"
+
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Air pollution is the introduction into the atmosphere of chemicals, particulates, or biological materialsthat cause discomfort, disease, or death to humans"
+            android:textSize="18sp"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromBottom" />
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#8BC34A"
+            android:padding="16dp"
+            android:layout_gravity="right"
+            android:src="@drawable/i"
+            discrollve:discrollve_translation="fromRight" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="#A9A9A9"
+
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+
+            android:fontFamily="helvetica"
+            android:gravity="center"
+            android:text="Inhaling air pollution takes away at least 1-2 years of a typical human life."
+            android:textSize="18sp"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromBottom" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#8BC34A"
+            android:padding="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/k"
+            discrollve:discrollve_translation="fromRight"
+            discrollve:discrollve_scaleX="true"
+            discrollve:discrollve_scaleY="true"  />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="#A9A9A9"
+
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+
+            android:fontFamily="helvetica"
+
+            android:gravity="center"
+            android:text=" Air pollution is not a recent occurrence. In 1952,the Great Smog of London killed 8000 people."
+            android:textSize="18sp"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromBottom" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#8BC34A"
+            android:padding="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/l"
+            discrollve:discrollve_scaleX="true"
+            discrollve:discrollve_scaleY="true"  />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="#A9A9A9"
+
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:fontFamily="helvetica"
+
+            android:gravity="center"
+            android:text=" The most hazardous pollutants are released from the air and less from the water and land together."
+            android:textSize="18sp"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromBottom" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#8BC34A"
+            android:padding="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/m"
+            discrollve:discrollve_translation="fromLeft|fromBottom"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="#A9A9A9"
+
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:fontFamily="helvetica"
+
+            android:gravity="center"
+            android:text=" Air pollution in India is estimated to cause 527, 700 deaths every year."
+            android:textSize="18sp"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromBottom" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#8BC34A"
+            android:padding="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/n"
+            discrollve:discrollve_translation="fromRight"
+            discrollve:discrollve_scaleX="true"
+            discrollve:discrollve_scaleY="true"  />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="#A9A9A9"
+
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:fontFamily="helvetica"
+
+            android:gravity="center"
+            android:text="300,000 in China die every year due heart disease and lung cancer cause by air pollution."
+            android:textSize="18sp"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromBottom" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#8BC34A"
+            android:padding="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/o"
+            discrollve:discrollve_scaleX="true"
+            discrollve:discrollve_scaleY="true"  />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="#A9A9A9"
+
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+
+            android:fontFamily="helvetica"
+            android:gravity="center"
+            android:text=" Air pollution impacts children and elderly people the most."
+            android:textSize="18sp"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromBottom" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#8BC34A"
+            android:padding="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/q"
+            discrollve:discrollve_scaleX="true"
+            discrollve:discrollve_scaleY="true"  />
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="#A9A9A9"
+
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:fontFamily="helvetica"
+            android:gravity="center"
+            android:text=" Indoor air pollution is 2-5 times worse than the air outdoors."
+            android:textSize="18sp"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromBottom" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#8BC34A"
+            android:padding="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/b"
+            discrollve:discrollve_scaleX="true"
+            discrollve:discrollve_scaleY="true"  />
+
+
+
+
+    </com.flavienlaurent.discrollview.lib.DiscrollViewContent>
+</com.flavienlaurent.discrollview.lib.DiscrollView>

@@ -1,38 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:weightSum="1">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="0dp"
+        app:srcCompat="@drawable/ab"
+        android:id="@+id/imageView" />
 
 
     <TextView
-        android:id="@+id/aqi_level"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="AQI- 260"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:layout_gravity="center"
         android:gravity="center"
         android:textColor="#e10d0d"
-        android:layout_marginTop="20dp"/>
+        android:id="@+id/textView" />
 
 
-    <WebView
-        android:id="@+id/webview"
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="American Center , KG marg"
+        android:textSize="20dp"
         android:layout_gravity="center"
-        android:layout_height="200dp"
-        android:layout_marginTop="50dp"
-        />
+        android:gravity="center"
+        android:textColor="@android:color/background_dark"
+         />
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+
+        <Button
+            android:id="@+id/news"
+            android:layout_marginLeft="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize = "16dp"
+            android:padding="8dp"
+            android:textColor="@android:color/white"
+            android:text="News Feed"/>
+
+
+        <Button
+            android:id="@+id/adv"
+            android:layout_marginLeft="45dp"
+            android:layout_width="wrap_content"
+            android:textSize = "16dp"
+            android:textColor="@android:color/white"
+            android:paddingRight="42dp"
+            android:paddingLeft="42dp"
+            android:layout_height="wrap_content"
+            android:text="FAQ"/>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
     <Button
-        android:id="@+id/news"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="20dp"
+        android:id="@+id/carpool"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="News Feed"/>
+        android:textSize = "16dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:textColor="@android:color/white"
+        android:text="CAR POOL"
+        android:onClick="share" />
 
 
+    <Button
+        android:id="@+id/advisory"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="44dp"
+        android:layout_width="wrap_content"
+        android:textSize = "16dp"
+        android:textColor="@android:color/white"
+        android:paddingRight="19dp"
+        android:paddingLeft="19dp"
+        android:layout_height="wrap_content"
+        android:text="Advisory"
+        android:onClick="adv"/>
+
+</LinearLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="0.19">
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="166dp"
+        app:srcCompat="@drawable/br"
+        android:layout_gravity="center"
+        android:id="@+id/imageView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp" />
+
+    <ImageView
+        android:layout_width="115dp"
+        android:layout_height="166dp"
+        app:srcCompat="@drawable/ta"
+        android:id="@+id/tar"
+        android:layout_alignTop="@+id/imageView3"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignStart="@+id/imageView3"
+        android:layout_marginTop="30dp" />
+
+    <ImageView
+        android:layout_width="225dp"
+        android:layout_height="257dp"
+        app:srcCompat="@drawable/sf"
+        android:id="@+id/imageView4"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="340dp"
+        app:srcCompat="@drawable/cig"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView5" />
+
+
+
+
+</RelativeLayout>
 </LinearLayout>

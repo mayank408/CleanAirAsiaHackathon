@@ -19,8 +19,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
-        android:textSize="40sp"
-        android:textColor="@android:color/black"
+        android:textSize="24dp"
+        android:textColor="@android:color/white"
         android:id="@+id/value" />
 
     <TextView
@@ -41,7 +41,7 @@
         android:id="@+id/info1"
         android:layout_alignParentEnd="true"
         android:textSize="18sp"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:layout_width="280dp"
         android:layout_alignParentRight="true" />
 
@@ -54,7 +54,7 @@
         android:layout_below="@+id/info3"
         android:layout_alignParentEnd="true"
         android:layout_alignStart="@+id/info3"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:layout_alignParentRight="true"
         android:layout_alignLeft="@+id/info3" />
 
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/info2"
         android:textSize="18sp"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:layout_below="@+id/info1"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="32dp"
@@ -115,7 +115,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/info3"
         android:textSize="18sp"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:layout_below="@+id/imageView4"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="16sp"
