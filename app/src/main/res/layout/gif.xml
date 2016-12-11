@@ -88,7 +88,8 @@
         android:paddingLeft="14dp"
         android:paddingRight="14dp"
         android:textColor="@android:color/white"
-        android:text="CAR POOL"/>
+        android:text="CAR POOL"
+        android:onClick="share" />
 
 
     <Button
