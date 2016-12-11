@@ -7,6 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import static info.androidhive.cardview.R.id.webview;
 
 
 /**
@@ -19,7 +24,10 @@ public class Gif extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gif);
-
+        TextView aqi_level = (TextView)findViewById(R.id.aqi_level);
+        Intent parentIntent = getIntent();
+        int AQI_Level = parentIntent.getIntExtra("AQI",350);
+        aqi_level.setText(Integer.toString(AQI_Level));
         WebView webview = (WebView)findViewById(R.id.webview);
         if(webview!=null) {
             webview.getSettings().setJavaScriptEnabled(true);

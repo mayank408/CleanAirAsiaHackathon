@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -109,6 +108,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private void changeActivity() {
         Intent i = new Intent(this,Gif.class);
+        i.putExtra("AQI",val);
         startActivity(i);
     }
 
@@ -172,7 +172,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         val = (ppmSort[0]*distanceSort[0] + ppmSort[1]*distanceSort[1] + ppmSort[2]*distanceSort[2])/(distanceSort[0] + distanceSort[1] + distanceSort[2]);
         sortPlaces = places;
         ppmSort = ppm;
-
+        val = val - 300;
         Log.e("PPM", Integer.toString(val));
         TextView aqi_text = (TextView) findViewById(R.id.aqi);
         aqi_text.setText("AQI = "+ Integer.toString(val));

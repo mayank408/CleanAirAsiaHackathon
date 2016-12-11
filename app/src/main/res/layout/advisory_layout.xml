@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_result"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/back"
+    tools:context="info.androidhive.cardview.ResultActivity"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:textSize="40sp"
+        android:textColor="@android:color/black"
+        android:id="@+id/value" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:id="@+id/subTitle"
+        android:layout_below="@+id/value"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subTitle"
+        android:layout_marginTop="32dp"
+        android:id="@+id/info1"
+        android:layout_alignParentEnd="true"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_width="280dp"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/info4"
+        android:textSize="18sp"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/info3"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/info3"
+        android:textColor="@android:color/black"
+        android:layout_alignParentRight="true"
+        android:layout_alignLeft="@+id/info3" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:id="@+id/info2"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/info1"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="32dp"
+        android:layout_width="280dp"
+        android:layout_alignParentRight="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_directions_run_black_24dp"
+        android:id="@+id/imageView2"
+        android:layout_alignTop="@+id/info1"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="17dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="17dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_directions_bus_black_24dp"
+        android:id="@+id/imageView4"
+        android:layout_alignTop="@+id/info2"
+        android:layout_alignStart="@+id/imageView2"
+        android:layout_alignLeft="@+id/imageView2" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_favorite_black_24dp"
+        android:id="@+id/imageView3"
+        android:layout_alignTop="@+id/info4"
+        android:layout_alignStart="@+id/imageView4"
+        android:layout_alignLeft="@+id/imageView4" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        app:srcCompat="@drawable/exercise"
+        android:id="@+id/imageView"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4"
+        android:layout_alignEnd="@+id/imageView4"
+        android:layout_above="@+id/imageView3"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignRight="@+id/imageView4" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/info3"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/imageView4"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16sp"
+        android:layout_alignStart="@+id/info2"
+        android:layout_alignParentRight="true"
+        android:layout_alignLeft="@+id/info2" />
+
+
+
+</RelativeLayout>
