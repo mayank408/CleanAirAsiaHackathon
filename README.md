@@ -1,0 +1,2 @@
+# CleanAirAsiaHackathon
+We have made an app which calculates the AQI of different places even where there is no AQI reading mechanism is available, using machine learning algorithm and shows the real-time AQI value.  Along with AQI it shows the consumption of pollution by a particular person using pictorial representation so that the user can connect with the app and also it allows the user to share the events related to environment happening around him or her.
